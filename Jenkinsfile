@@ -5,7 +5,7 @@ pipeline {
     }
 
     stages {
-        stage ('Build') {
+        stage('Build') {
             step {
             sh 'mvn clean'
             sh 'mvn install'
@@ -13,23 +13,22 @@ pipeline {
         }
          
     }
-        stage ('Test') {
+        stage('Test') {
             steps { 
 
             sh 'mvn test'
         }
     }
-        stage ('Deploy') {
+        stage('Deploy') {
             steps {
               echo 'Deploy step'
             sleep 10
         }
     }
-        stage ('Docker') {
+        stage('Docker') {
             steps{
               echo 'Image step'
             }
         }
-
-}
+    }
 }
